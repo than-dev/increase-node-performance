@@ -13,9 +13,9 @@ if (cluster.isPrimary) {
     cluster.fork()
     cluster.fork()
 
-//     cluster.on('exit', (worker, code, signal) => {
-//     console.log(`worker ${worker.process.pid} died`);
-//   });
+    cluster.on('exit', (worker, code, signal) => {
+        console.log(`worker ${worker.process.pid} died`);
+    });
 } else {
     //I'm a child, I'm going to act like a server and nothing else
     const express = require('express');

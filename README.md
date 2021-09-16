@@ -13,8 +13,9 @@
 
 First we need to understand the default application flux, that is:
 
-( All in a Single-Thread ) <br>
+```
 Request ----> Node Server -----> Response
+```
 
 It causes a block in all the event loop, this way, in request process much longs, we can lose performance and get worse the user experience.
 
@@ -32,4 +33,15 @@ Follows a visual representation:
 
 <br>
 
-this basically call a lot of times the server index file, in the first execution, it creates the Cluster Manager and then it will create some new workers instances (child process).
+This basically call a lot of times the server index file, in the first execution, it creates the Cluster Manager and then it will create some new workers instances (child process). The command to create children process: 
+
+```
+cluster.fork()
+```
+
+Command to verify if the process is the primary(first excecution):
+
+```
+cluster.isPrimary(): Boolean
+```
+

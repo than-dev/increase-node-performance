@@ -11,7 +11,6 @@
 
 </div>
 
-<hr>
 <br>
 
 ## Two different ways to do it

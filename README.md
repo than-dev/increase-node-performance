@@ -1,4 +1,17 @@
-# Improving NodeJS Performance
+<p align="center">
+  <a href="" rel="noopener">
+ <img src="https://www.luby.com.br/wp-content/uploads/2020/11/nodejs-luby.png" alt="Project logo"></a>
+</p>
+
+<h3 align="center">NodeJS Enhance Performance
+<div align="center">
+<br>
+
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
+
+</div>
+
+<hr>
 <br>
 
 ## Two different ways to do it
@@ -74,7 +87,7 @@ const numCPUs = cpus().length;
 <br>
 
 ### Conclusion
-To use this feature we need to be wary before it, you can fill free to do your tests and benchmarks using the file _cluster.js as base. Prefer to use it when you need big processing in the request.
+To use this feature we need to be wary before, you can fill free to do your tests and benchmarks using the file _cluster.js as base. Prefer to use it when you need big processing in the request.
 
 <br>
 <hr>
@@ -85,4 +98,11 @@ Just use it if you have a big business logic that can take much time.
 
 Our app communicate with the webworker through this flux:
 
-Our app postMessage, and the webWorker stay listening an event 'onMessage', like the nodejs Event Emitter
+Our app postMessage, and the webWorker stay listening an event 'onMessage', like the nodejs Event Emitter. <br>
+The applied example in the file _workers-threads.js is at nodejs documentation, see it to more details.
+
+<br>
+<hr>
+<br>
+
+## Author: Nathan Cotrim - MIT License

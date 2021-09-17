@@ -1,27 +1,27 @@
-## Improving NodeJS Performance
+# Improving NodeJS Performance
 <hr>
 <br>
 
-### Two different ways to do it
+## Two different ways to do it
 
 - (Recommended) Node 'Cluster' mode
 - (Experimental) Worker Threads
   
 <br>
 
-### Start
+## Start
 
 First we need to understand the default application flux, that is:
 
 ```
-Request ----> Node Server -----> Response
+Request ----> Node Server ----> Response
 ```
 
 It causes a block in all the event loop, this way, in request process much longs, we can lose performance and get worse the user experience.
 
 <br>
 
-### Cluster Module
+## Cluster Module
 
 The clustering process creates and manages some nodejs event loop instances, winning this way mor threads to execute our code, action that will increase our speed. This instances are monitored by the Cluster Manager
 
@@ -39,9 +39,35 @@ This basically call a lot of times the server index file, in the first execution
 cluster.fork()
 ```
 
+<br>
+<hr>
+<br>
+
 Command to verify if the process is the primary(first excecution):
 
 ```
 cluster.isPrimary(): Boolean
 ```
 
+<br>
+
+### Benefits
+<br>
+
+Using it you can break your server flux in most pieces, this way you will process more then one request at a time.
+
+<br>
+
+
+### Disadvantages and Not Usecases
+<br>
+
+If we increase the number of children process, will arrive a moment that our performance will decrease, because all machines have a limit of proccessing, because it, is recommendable we use this logic:
+
+```
+const numCPUs = cpus().length;
+
+ for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+}
+```

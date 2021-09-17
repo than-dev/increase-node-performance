@@ -81,3 +81,8 @@ To use this feature we need to be wary before it, you can fill free to do your t
 <br>
 
 ## Worker Threads
+Just use it if you have a big business logic that can take much time.
+
+Our app communicate with the webworker through this flux:
+
+Our app postMessage, and the webWorker stay listening an event 'onMessage', like the nodejs Event Emitter

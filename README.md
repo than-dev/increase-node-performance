@@ -1,5 +1,4 @@
 # Improving NodeJS Performance
-<hr>
 <br>
 
 ## Two different ways to do it
@@ -7,6 +6,8 @@
 - (Recommended) Node 'Cluster' mode
 - (Experimental) Worker Threads
   
+<br>
+<hr>
 <br>
 
 ## Start
@@ -19,6 +20,8 @@ Request ----> Node Server ----> Response
 
 It causes a block in all the event loop, this way, in request process much longs, we can lose performance and get worse the user experience.
 
+<br>
+<hr>
 <br>
 
 ## Cluster Module
@@ -40,29 +43,25 @@ cluster.fork()
 ```
 
 <br>
-<hr>
-<br>
 
-Command to verify if the process is the primary(first excecution):
+Command to verify if the process is the primary(first execution):
 
 ```
 cluster.isPrimary(): Boolean
 ```
 
 <br>
-
-### Benefits
+<hr>
 <br>
 
+### Benefits
 Using it you can break your server flux in most pieces, this way you will process more then one request at a time.
 
 <br>
 
 
 ### Disadvantages and Not Usecases
-<br>
-
-If we increase the number of children process, will arrive a moment that our performance will decrease, because all machines have a limit of proccessing, because it, is recommendable we use this logic:
+If we increase the number of children process, will arrive a moment that our performance will decrease, because all machines have a limit of processing, because it, is recommendable we use this logic:
 
 ```
 const numCPUs = cpus().length;
@@ -71,3 +70,14 @@ const numCPUs = cpus().length;
     cluster.fork();
 }
 ```
+
+<br>
+
+### Conclusion
+To use this feature we need to be wary before it, you can fill free to do your tests and benchmarks using the file _cluster.js as base. Prefer to use it when you need big processing in the request.
+
+<br>
+<hr>
+<br>
+
+## Worker Threads

@@ -3,7 +3,7 @@
  <img src="https://www.luby.com.br/wp-content/uploads/2020/11/nodejs-luby.png" alt="Project logo"></a>
 </p>
 
-<h3 align="center">NodeJS Enhance Performance
+<h2 align="center"> Enhance NodeJS Performance
 <div align="center">
 <br>
 
@@ -13,7 +13,7 @@
 
 <br>
 
-## Two different ways to do it
+## ➰ Two different ways to do it
 
 - (Recommended) Node 'Cluster' mode
 - (Experimental) Worker Threads
@@ -22,7 +22,7 @@
 <hr>
 <br>
 
-## Start
+## 🐊 Start
 
 First we need to understand the default application flux, that is:
 
@@ -36,7 +36,7 @@ It causes a block in all the event loop, this way, in request process much longs
 <hr>
 <br>
 
-## Cluster Module
+## 🛠️ Cluster Module
 
 The clustering process creates and manages some nodejs event loop instances, winning this way mor threads to execute our code, action that will increase our speed. This instances are monitored by the Cluster Manager
 
@@ -92,7 +92,7 @@ To use this feature we need to be wary before, you can fill free to do your test
 <hr>
 <br>
 
-## Worker Threads
+## 🔨 Worker Threads
 Just use it if you have a big business logic that can take much time.
 
 Our app communicate with the webworker through this flux:
@@ -104,4 +104,4 @@ The applied example in the file _workers-threads.js is at nodejs documentation, 
 <hr>
 <br>
 
-## Author: Nathan Cotrim - MIT License
+### 🛸 Author: Nathan Cotrim - MIT License

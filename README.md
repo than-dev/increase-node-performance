@@ -1,8 +1,3 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img src="https://www.luby.com.br/wp-content/uploads/2020/11/nodejs-luby.png" alt="Project logo"></a>
-</p>
-
 <h2 align="center"> Enhance NodeJS Performance
 <div align="center">
 <br>
